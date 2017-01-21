@@ -1,0 +1,25 @@
+@import "../assets/css/variables";
+app-component {
+    height: 100%;
+    .logo {
+        display: block;
+        width: 180px;
+        min-height: 38px;
+        margin-right: 20px;
+    }
+    .header-con {
+        color: $accentColorLight;
+    }
+    .white-con {
+        background-color: $accentColorLighter;
+    }
+    md-tabs {
+        md-tabs-wrapper {
+            background-color: rgb(250, 250, 250);
+        }
+    }
+    md-input-container:not(.md-input-invalid) .md-input-message-animation {
+        opacity: 0 !important;
+        margin-top: -100px !important;
+    }
+}

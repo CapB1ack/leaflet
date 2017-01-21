@@ -1,0 +1,10 @@
+<leaflet ng-if="$ctrl.layerEnabled" width="100%" height="100%"
+         paths="$ctrl.paths"
+         layers="$ctrl.layers"
+         markers="$ctrl.markers"
+         defaults="$ctrl.defaults"></leaflet>
+
+<leaflet ng-if="!$ctrl.layerEnabled" width="100%" height="100%"
+         paths="$ctrl.paths"
+         markers="$ctrl.markers"
+         defaults="$ctrl.defaults"></leaflet>
