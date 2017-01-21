@@ -8,10 +8,7 @@ import Shared from './shared/shared.module';
 import '../../node_modules/leaflet/dist/leaflet.js';
 import '../../node_modules/leaflet/dist/leaflet-src.js';
 import '../../node_modules/angular-simple-logger/dist/';
-import '../../node_modules/ui-leaflet/ui-leaflet.js';
-import '../../node_modules/ui-leaflet/leaflet-label.js';
-import '../../node_modules/ui-leaflet/mapper.js';
-import '../../node_modules/ui-leaflet/label.css';
+import '../../node_modules/ui-leaflet/dist/ui-leaflet.min.js';
 import '../../node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js';
 import '../../node_modules/leaflet/dist/leaflet.css';
 

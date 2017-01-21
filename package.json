@@ -50,6 +50,7 @@
     "tslint": "4.2.0",
     "tslint-loader": "3.3.0",
     "typescript": "2.1.4",
+    "ui-leaflet": "^2.0.0",
     "webpack": "2.2.0-rc.3",
     "webpack-dev-server": "2.2.0-rc.0",
     "webpack-merge": "2.0.0"
