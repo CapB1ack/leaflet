@@ -1,6 +1,5 @@
 declare var __ENV: string;
 declare var angular;
-declare var L;
 declare var require: {
     
     <T>(path: string): T;

@@ -10,7 +10,7 @@ class ChildController implements IComponentController {
     constructor() {
         
         // пример данных с трекера
-        this.data = require('./data.json');
+        this.data = require('./data3.json');
         // интервал выбранного отрезка в timestamp (для примера взял значения сам)
         this.select = [1484134109000, 1484138072000];
         // отображать меню зума
