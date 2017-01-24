@@ -6,12 +6,14 @@ import Core from './core/core.module';
 import Shared from './shared/shared.module';
 
 
-import '../../node_modules/leaflet/dist/leaflet.js';
+import 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+//import '../../node_modules/leaflet/dist/leaflet.js';
 //import '../../node_modules/leaflet/dist/leaflet-src.js';
 import '../../node_modules/angular-simple-logger/dist/';
 import '../../node_modules/ui-leaflet/dist/ui-leaflet.min.js';
 import '../../node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js';
-import '../../node_modules/leaflet/dist/leaflet.css';
 
 
 const root = module('app', [

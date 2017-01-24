@@ -1,29 +1,27 @@
 import {IComponentController, IComponentOptions} from 'angular';
-
+import {MapOptions} from 'leaflet';
 import './activity-route.scss';
-import ActivityRouteDataController from './activityRouteData.controller';
+import ActivityRouteDataController from './activityRouteData';
 
 class ActivityRouteController implements IComponentController {
     private data;
-    private select;
-    private leafletData;
-    private defaults;
-    private zoomEnabled;
-    private ModelData;
-
-    constructor(leafletData) {
+    private select: Array<{start: number, end: number}>;
+    private defaults: MapOptions ={};
+    private zoomEnabled: boolean;
+    private modelData;
+    
+    static $inject = ['leafletData'];
+    constructor(private leafletData: any) {
         this.leafletData = leafletData;
     }
 
     $onInit() {
-        this.ModelData = new ActivityRouteDataController(this.data, this.select);
+        this.modelData = new ActivityRouteDataController(this.data, this.select);
         // показывать или нет панель зума
-        this.defaults = {
-            zoomControl: this.zoomEnabled ? true : false
-        };
+        this.defaults.zoomControl = this.zoomEnabled;
         // центрирую карту по основному маршруту
         this.leafletData.getMap().then((map) => {
-            map.fitBounds(this.ModelData.coordinates.map((elem) => L.GeoJSON.coordsToLatLng(elem.reverse())));
+            map.fitBounds(this.modelData.coordinates.map((elem) => L.GeoJSON.coordsToLatLng(elem.reverse())));
             map.invalidateSize();
         });
     }

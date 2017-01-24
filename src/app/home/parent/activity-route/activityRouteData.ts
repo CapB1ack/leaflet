@@ -1,6 +1,6 @@
 import {IComponentController} from 'angular';
 
-class ActivityRouteDataController implements IComponentController {
+class ActivityRouteData implements IComponentController {
     private lng;
     private lat;
     private time;
@@ -72,16 +72,28 @@ class ActivityRouteDataController implements IComponentController {
 
     buildSelection(data) {
         //TODO: how the fuc refactor this shit??
-        // фильтую массив данных по временному интервалу
+        /**
+         * фильтую массив данных по временному интервалу
+         * @param data {Array} массив с необработанными данными metrics
+         * @type {Array}
+         */
         let a = [];
         data.map((stamp) => {
+            // если текущая запись попадавет во временной интерва, заданный ранее
             if ((stamp[this.time] >= this.startTimeSt) && (stamp[this.time] <= this.stopTimeSt)) {
+                //формиру Гео_объект и кладу в массив
                 a.push({lng: stamp[this.lng], lat: stamp[this.lat]});
             }
         });
         return a;
     }
 
+    /**
+     * формирует массив из координат или гео-координат
+     * @param data{Array} Список массивов [x,y], или геоОбъектов {lng:x, lat:y}
+     * @param geo Boolean, переключатель типа
+     * @returns {Map|U[]|Uint8Array|any|Int8Array|Int32Array}
+     */
     buildCoors(data, geo = false) {
         // собираю массив координат / объектов координат
         return data.map((stamp) => geo ? {
@@ -125,4 +137,4 @@ class ActivityRouteDataController implements IComponentController {
 
 }
 
-export default ActivityRouteDataController;
+export default ActivityRouteData;
